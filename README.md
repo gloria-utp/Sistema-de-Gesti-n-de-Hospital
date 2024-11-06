@@ -4,6 +4,10 @@ Este proyecto es una implementación de un sistema de gestión hospitalaria en C
 
 [![Codigo de colores en triage](https://d1qqtien6gys07.cloudfront.net/wp-content/uploads/2022/11/Captura-de-Pantalla-2022-11-10-a-las-12.15.12.png "Codigo de colores en triage")](https://d1qqtien6gys07.cloudfront.net/wp-content/uploads/2022/11/Captura-de-Pantalla-2022-11-10-a-las-12.15.12.png "Codigo de colores en triage")
 
+### [Enlace del vídeo](https://youtu.be/Jpc-tqZ0oRM).
+https://youtu.be/Jpc-tqZ0oRM
+
+
 ## Tabla de Contenidos
 - [Características](#características)
 - [Estructuras de Datos](#estructuras-de-datos)
