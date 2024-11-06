@@ -2,6 +2,8 @@
 
 Este proyecto es una implementación de un sistema de gestión hospitalaria en C++ que utiliza colas de prioridad para gestionar la atención de pacientes en función de la urgencia de su condición médica. El sistema permite agregar y atender pacientes según su prioridad. Adicionalmente, se define una estructura para los médicos y se pueden programar citas entre pacientes y médicos.
 
+[![Codigo de colores en triage](https://d1qqtien6gys07.cloudfront.net/wp-content/uploads/2022/11/Captura-de-Pantalla-2022-11-10-a-las-12.15.12.png "Codigo de colores en triage")](https://d1qqtien6gys07.cloudfront.net/wp-content/uploads/2022/11/Captura-de-Pantalla-2022-11-10-a-las-12.15.12.png "Codigo de colores en triage")
+
 ## Tabla de Contenidos
 - [Características](#características)
 - [Estructuras de Datos](#estructuras-de-datos)
