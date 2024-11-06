@@ -39,7 +39,7 @@ Si prefieres no instalar un compilador local, puedes usar [Programiz Online Comp
 2. Copia el código fuente y pégalo en el editor de Programiz.
 3. Haz clic en "Run" para compilar y ejecutar el programa en línea.
 
-Este método permite probar el sistema sin necesidad de configurar un entorno local.
+Este método permite probar el sistema sin necesidad de configurar un entorno local. También puedes ejecutar el proyecto con el siguiente enlace: [Click aquí para ejecutar el proyecto en el compilador en línea](https://www.programiz.com/online-compiler/8gfhOUFeluUjt)
 
 ## Uso en Local
 Si prefieres usar un compilador local:
