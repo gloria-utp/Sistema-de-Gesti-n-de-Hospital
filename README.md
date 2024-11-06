@@ -1,5 +1,6 @@
 # Sistema de Gestión de Hospital
-Este proyecto es una implementación de un sistema de gestión de hospital en C++ que utiliza colas de prioridad y listas enlazadas para organizar y gestionar la información de pacientes, médicos y citas. El sistema permite priorizar la atención de pacientes de acuerdo a su urgencia y administrar citas y médicos de manera eficiente.
+
+Este proyecto es una implementación de un sistema de gestión hospitalaria en C++ que utiliza colas de prioridad para gestionar la atención de pacientes en función de la urgencia de su condición médica. El sistema permite agregar y atender pacientes según su prioridad. Adicionalmente, se define una estructura para los médicos y se pueden programar citas entre pacientes y médicos.
 
 ## Tabla de Contenidos
 - [Características](#características)
@@ -13,15 +14,17 @@ Este proyecto es una implementación de un sistema de gestión de hospital en C+
 - [Contribuciones](#contribuciones)
 
 ## Características
-- **Gestión de Pacientes**: Añade pacientes a una cola de prioridad en función de su urgencia.
-- **Gestión de Médicos**: Administra la información de médicos en una lista enlazada.
-- **Gestión de Citas**: Programa citas entre pacientes y médicos.
+- **Gestión de Pacientes**: Añade pacientes a una cola de prioridad en función de su urgencia médica.
 - **Atención de Pacientes**: Atiende al paciente más urgente de la cola de prioridad.
-- **Visualización de Datos**: Permite listar los médicos y citas programadas.
+- **Visualización de Pacientes en Espera**: Muestra el próximo paciente en ser atendido.
+- **Gestión de Médicos**: Define a los médicos y sus especialidades.
+- **Programación de Citas**: Define la estructura básica de una cita entre un paciente y un médico.
 
 ## Estructuras de Datos Utilizadas
-- **Cola de Prioridad**: Organiza a los pacientes según su nivel de urgencia.
-- **Lista Enlazada**: Almacena la información de médicos y citas.
+- **Cola de Prioridad (Lista Enlazada)**: Organiza a los pacientes en una estructura que permite atender al más urgente.
+- **Clase Paciente**: Almacena datos como nombre, edad, condición médica y prioridad de cada paciente.
+- **Clase Medico**: Define al médico con su especialidad y disponibilidad.
+- **Clase Cita**: Representa una cita entre un paciente y un médico con una fecha.
 
 ## Requisitos
 - C++11 o superior
@@ -31,7 +34,7 @@ Este proyecto es una implementación de un sistema de gestión de hospital en C+
 Si prefieres no instalar un compilador local, puedes usar [Programiz Online Compiler](https://www.programiz.com/cpp-programming/online-compiler/) para ejecutar el código:
 
 1. Ve a [Programiz Online Compiler](https://www.programiz.com/cpp-programming/online-compiler/).
-2. Copia el código fuente desde este repositorio y pégalo en el editor de Programiz.
+2. Copia el código fuente y pégalo en el editor de Programiz.
 3. Haz clic en "Run" para compilar y ejecutar el programa en línea.
 
 Este método permite probar el sistema sin necesidad de configurar un entorno local.
@@ -54,31 +57,43 @@ Si prefieres usar un compilador local:
     ```
 
 ## Ejemplo de Código
+Aquí tienes un ejemplo del uso del sistema:
+
 ```cpp
-// Agregar pacientes y médicos
-agregarPaciente("Juan Perez", 30, 1);
-agregarPaciente("Ana Gomez", 45, 3);
-agregarMedico("Dr. Garcia", "Cardiología");
-agregarMedico("Dr. Lopez", "Neurología");
+int main() {
+    SistemaHospitalario sistema;
 
-// Atención de paciente
-atenderPaciente();
+    // Agregar pacientes con diferentes prioridades
+    sistema.agregarPaciente(1, "Juan Perez", 45, "Arritmia", 2);
+    sistema.agregarPaciente(2, "Maria Garcia", 29, "Sinusitis", 4);
+    sistema.agregarPaciente(3, "Carlos Lopez", 70, "Paro cardiorespiratorio", 1);
 
-// Mostrar médicos y programar citas
-mostrarMedicos();
-programarCita(Paciente("Juan Perez", 30, 1), Medico("Dr. Garcia", "Cardiología"));
-mostrarCitas();
+    // Mostrar el próximo paciente y atenderlos
+    sistema.mostrarProximoPaciente();
+    sistema.atenderPaciente();
+    sistema.mostrarProximoPaciente();
+    sistema.atenderPaciente();
+    sistema.mostrarProximoPaciente();
+    sistema.atenderPaciente();
+
+    return 0;
+}
 ```
 
+
 ## Estructura del Código
-- Paciente: Clase para almacenar datos del paciente y su prioridad.
-- Medico: Clase para almacenar la información del médico.
-- Cita: Clase para representar una cita entre un paciente y un médico en una fecha específica.
+- Paciente: Clase que almacena los datos del paciente y su prioridad.
+- Nodo: Estructura de nodo que contiene un paciente y un puntero al siguiente nodo en la cola.
+- ColaDePrioridad: Clase que gestiona la cola de pacientes según la prioridad.
+- Medico: Clase que representa a un médico, incluyendo su especialidad y disponibilidad.
+- Cita: Clase para representar una cita entre un paciente y un médico.
+- SistemaHospitalario: Clase principal que utiliza las colas y listas para manejar las operaciones de pacientes, médicos y citas.
 
 ## Futuras Mejoras
-- Reasignación Automática de Citas: Reasignar citas en caso de indisponibilidad de médicos.
-- Notificaciones de Urgencia: Alertar al personal sobre pacientes de alta prioridad.
-- Persistencia de Datos: Guardar y cargar datos desde archivos para su uso en futuras ejecuciones.
+- Gestión Completa de Citas: Implementar funciones para programar y cancelar citas.
+- Almacenamiento en Archivos: Guardar los datos de pacientes y citas en archivos para su uso en futuras ejecuciones.
+- Notificaciones de Urgencia: Sistema de alertas para los pacientes de alta prioridad.
+- Mejoras en la Visualización: Mostrar más detalles de los pacientes y su historial médico.
 
 ## Contribuciones
 Las contribuciones son bienvenidas. Para contribuir:
